@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\jshan\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_Iruni.-1690380248.00" t="ExcludeRecursive" />
+    <e p="E:\SVN\AsecurityR" t="IncludeFlat">
+      <e p="Iruni" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Class.cs" t="Include" />
+        <e p="Config.cs" t="Include" />
+        <e p="Crypto.cs" t="Include" />
+        <e p="EventLogger.cs" t="Include" />
+        <e p="File.cs" t="Include" />
+        <e p="home.ico" t="Include" />
+        <e p="Iruni.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="app.manifest" t="Include" />
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Resource1.Designer.cs" t="Include" />
+        <e p="Resource1.resx" t="Include" />
+        <e p="Resources" t="Include">
+          <e p="agentupdate.exe" t="Include" />
+          <e p="Ionic.Zip.dll" t="Include" />
+          <e p="iruni.ini" t="Include" />
+          <e p="update.exe" t="Include" />
+        </e>
+      </e>
+      <e p="Iruni.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

@@ -1,0 +1,298 @@
+﻿        /*
+        async Task<string> StartServicesTask(string ip)
+        {
+            string returnValue = "Fail";
+            try
+            {
+                tcpClient = new TcpClient();
+                NetworkStream network = TcpConnecting(tcpClient, ip, 9051);
+
+                if (network != null)
+                {
+                    byte[] ReadByte;
+                    ReadByte = new byte[tcpClient.ReceiveBufferSize];
+
+                    Crypto.Encrypt("StartService", network);
+                    //클라이언트 전송 대기 확인
+                    ReadResult = await network.ReadAsync(ReadByte, 0, (int)ReadByte.Length);
+                    returnValue = Crypto.Decrypt(ReadByte);
+                    Form1.PassLog(ip, returnValue);
+
+                    if (returnValue.StartsWith("Start"))
+                    {
+                        Crypto.Encrypt("Ok", network);
+                        //클라이언트 처리 결과 확인
+                        ReadResult = await network.ReadAsync(ReadByte, 0, (int)ReadByte.Length);
+                        returnValue = Crypto.Decrypt(ReadByte);
+                        Form1.PassLog(ip, returnValue);
+                    }
+                }
+                return returnValue;
+            }
+            catch (Exception ex)
+            {
+                EventLogger.LogEvent("Error start service with message: " + ex.Message,
+System.Diagnostics.EventLogEntryType.Warning);
+                PassLog(ip, "Error start service with message: " + ex.ToString());
+                return returnValue;
+            }
+            finally
+            {
+                tcpClient.Close();
+            }
+        }
+        */
+
+        //StopServicesTask(string ip)
+        /*
+        async Task<string> StopServicesTask(string ip)
+        {
+            string returnValue = "Fail";
+            try
+            {
+                tcpClient = new TcpClient();
+                NetworkStream network = TcpConnecting(tcpClient, ip, 9051);
+
+                if (network != null)
+                {
+                    byte[] ReadByte;
+                    ReadByte = new byte[tcpClient.ReceiveBufferSize];
+
+                    Crypto.Encrypt("StopService", network);
+                    ReadResult = await network.ReadAsync(ReadByte, 0, (int)ReadByte.Length);
+                    returnValue = Crypto.Decrypt(ReadByte);
+                    Form1.PassLog(ip, returnValue);
+                    if (returnValue.StartsWith("Start"))
+                    {
+                        Crypto.Encrypt("Ok", network);
+                        //클라이언트 전송 대기 확인
+                        ReadResult = await network.ReadAsync(ReadByte, 0, (int)ReadByte.Length);
+                        returnValue = Crypto.Decrypt(ReadByte);
+                        Form1.PassLog(ip, returnValue);
+                    }
+                }
+
+                return returnValue;
+            }
+            catch (Exception ex)
+            {
+                EventLogger.LogEvent("Error stop service with message: " + ex.Message,
+System.Diagnostics.EventLogEntryType.Warning);
+                PassLog(ip, "Error stop service with message: " + ex.ToString());
+                return returnValue;
+            }
+            finally
+            {
+                tcpClient.Close();
+            }
+        }
+        */
+
+        //AsecurityStartTask(string ip)
+        /*
+        async Task<string> AsecurityStartTask(string ip)
+        {
+            string returnValue = "Fail";
+            try
+            {
+                tcpClient = new TcpClient();
+                NetworkStream network = TcpConnecting(tcpClient, ip, 9051);
+
+                if (network != null)
+                {
+                    byte[] ReadByte;
+                    ReadByte = new byte[tcpClient.ReceiveBufferSize];
+
+                    Crypto.Encrypt("AsecurityStart", network);
+                    ReadResult = await network.ReadAsync(ReadByte, 0, (int)ReadByte.Length);
+                    returnValue = Crypto.Decrypt(ReadByte);
+                    Form1.PassLog(ip, returnValue);
+                }
+                return returnValue;
+            }
+            catch (Exception ex)
+            {
+                EventLogger.LogEvent("Error asecurity start with message: " + ex.Message,
+System.Diagnostics.EventLogEntryType.Warning);
+                PassLog(ip, "Error asecurity start with message: " + ex.ToString());
+
+                return returnValue;
+            }
+            finally
+            {
+                tcpClient.Close();
+            }
+        }
+        */
+
+        //AsecurityStopTask(string ip)
+        /*
+        async Task<string> AsecurityStopTask(string ip)
+        {
+            string returnValue = "Fail";
+            try
+            {
+                tcpClient = new TcpClient();
+                NetworkStream network = TcpConnecting(tcpClient, ip, 9051);
+
+                if (network != null)
+                {
+                    byte[] ReadByte;
+                    ReadByte = new byte[tcpClient.ReceiveBufferSize];
+
+                    Crypto.Encrypt("AsecurityStop", network);
+                    //클라이언트 처리 결과 확인
+                    ReadResult = await network.ReadAsync(ReadByte, 0, (int)ReadByte.Length);
+                    returnValue = Crypto.Decrypt(ReadByte);
+                    Form1.PassLog(ip, returnValue);
+                }
+                return returnValue;
+            }
+            catch (Exception ex)
+            {
+                EventLogger.LogEvent("Error asecurity stop with message: " + ex.Message,
+System.Diagnostics.EventLogEntryType.Warning);
+                PassLog(ip, "Error asecurity stop with message: " + ex.ToString());
+                return returnValue;
+            }
+            finally
+            {
+                tcpClient.Close();
+            }
+        }
+        */
+
+        //AsecurityDownloadTask(string ip)
+        /*
+        async Task<string> AsecurityDownloadTask(string ip)
+        {
+            string returnValue = "Fail";
+            try
+            {
+                tcpClient = new TcpClient();
+                NetworkStream network = TcpConnecting(tcpClient, ip, 9051);
+
+                if (network != null)
+                {
+                    byte[] ReadByte;
+                    ReadByte = new byte[tcpClient.ReceiveBufferSize];
+
+                    Crypto.Encrypt("AsecurityDownload", network);
+
+                    //클라이언트 전송 가능 여부 확인
+                    ReadResult = await network.ReadAsync(ReadByte, 0, (int)ReadByte.Length);
+                    returnValue = Crypto.Decrypt(ReadByte);
+                }
+                return returnValue;
+            }
+            catch (Exception ex)
+            {
+                EventLogger.LogEvent("Error asecurity download with message: " + ex.Message,
+System.Diagnostics.EventLogEntryType.Warning);
+                PassLog(ip, "Error asecurity download with message: " + ex.ToString());
+                return returnValue;
+            }
+            finally
+            {
+                tcpClient.Close();
+            }
+        }
+        */
+
+        //AgentDownloadTask(string ip)
+        /*
+        async Task<string> AgentDownloadTask(string ip)
+        {
+            string returnValue = "Fail";
+            try
+            {
+                tcpClient = new TcpClient();
+                NetworkStream network = TcpConnecting(tcpClient, ip, 9051);
+
+                if (network != null)
+                {
+                    byte[] ReadByte;
+                    ReadByte = new byte[tcpClient.ReceiveBufferSize];
+
+                    Crypto.Encrypt("AgentDownload", network);
+
+                    //클라이언트 전송 가능 여부 확인
+                    ReadResult = await network.ReadAsync(ReadByte, 0, (int)ReadByte.Length);
+                    returnValue = Crypto.Decrypt(ReadByte);
+                    Form1.PassLog(ip, returnValue);
+                    if (returnValue.StartsWith("Start"))
+                    {
+                        Crypto.Encrypt("Ok", network);
+                        //클라이언트 환경설정 파일 다운로드
+                        ReadResult = await network.ReadAsync(ReadByte, 0, (int)ReadByte.Length);
+                        returnValue = Crypto.Decrypt(ReadByte);
+
+                        Crypto.Encrypt("Ok", network);
+
+                        ReadResult = await network.ReadAsync(ReadByte, 0, (int)ReadByte.Length);
+                        Form1.PassLog(ip, Crypto.Decrypt(ReadByte));
+                    }
+                }
+                return returnValue;
+            }
+            catch (Exception ex)
+            {
+                EventLogger.LogEvent("Error agent.ini download with message: " + ex.Message,
+System.Diagnostics.EventLogEntryType.Warning);
+                PassLog(ip, "Error agent.ini download with message: " + ex.ToString());
+                return returnValue;
+            }
+            finally
+            {
+                tcpClient.Close();
+            }
+        }
+        */
+		/*
+        async Task<string> CheckVersionServicesTask(string ip)
+        {
+            string returnValue = "Fail";
+            try
+            {
+                tcpClient = new TcpClient();
+                NetworkStream network = TcpConnecting(tcpClient, ip, 9051);
+
+                if (network != null)
+                {
+                    byte[] ReadByte;
+                    ReadByte = new byte[tcpClient.ReceiveBufferSize];
+
+                    Crypto.Encrypt("CheckVersion", network);
+
+                    //전송 가능 여부 확인
+                    ReadResult = await network.ReadAsync(ReadByte, 0, (int)ReadByte.Length);
+                    Form1.PassLog(ip, Crypto.Decrypt(ReadByte));
+
+                    //회신
+                    Crypto.Encrypt("Ok", network);
+
+                    //클라이언트 정보 저장
+                    ReadResult = await network.ReadAsync(ReadByte, 0, (int)ReadByte.Length);
+                    returnValue = Crypto.Decrypt(ReadByte);
+                    //회신
+                    Crypto.Encrypt("Ok", network);
+
+                    //클라이언트로 부터 완료 메세지 확인
+                    ReadResult = await network.ReadAsync(ReadByte, 0, (int)ReadByte.Length);
+                    Form1.PassLog(ip, Crypto.Decrypt(ReadByte));
+                }
+                return returnValue;
+            }
+            catch (Exception ex)
+            {
+                EventLogger.LogEvent("Error check server information with message: " + ex.Message,
+System.Diagnostics.EventLogEntryType.Warning);
+                PassLog(ip, "Error check server information with message: " + ex.ToString());
+                return returnValue;
+            }
+            finally
+            {
+                tcpClient.Close();
+            }
+        }
+*/
