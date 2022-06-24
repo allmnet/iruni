@@ -455,7 +455,6 @@ namespace Iruni
                         Crypto.Encrypt("Jobid:" + ti.Jobid, network);
                         Crypto.Encrypt(result.ToString(), network);
                     }
-
                 }
                 catch (Exception)
                 {
@@ -748,7 +747,7 @@ namespace Iruni
                 }
                 else
                 {
-                    message += ",Other_Windows";
+                    message += ",Windows";
                 }
                 foreach (string ip in Class.strServerIP)
                 {
